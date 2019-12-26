@@ -3,6 +3,7 @@ package ir.mctab.java32.hibernate.projects.hibernateandrepository.repositpries;
 import ir.mctab.java32.hibernate.projects.hibernateandrepository.domain.Laptop;
 import ir.mctab.java32.hibernate.projects.hibernateandrepository.repositories.LaptopRepository;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class TestLaptopRepository {
@@ -22,8 +23,9 @@ public class TestLaptopRepository {
         laptopRepository
                 .findAll()
                 .stream()
-                // .map(laptop -> laptop.getHardwareConfig())
-                .filter(laptop -> laptop.getHardwareConfig().contains("i9"))
+                //.map(laptop -> Arrays.asList(laptop.getTitle()).stream())
+                //.map(laptop -> laptop.getHardwareConfig())
+                .filter(laptop -> laptop.getHardwareConfig().contains(" i9"))
                 .flatMap(laptop -> Stream.of(laptopRepository.findById(laptop.getId()).getTitle()))
                 .forEach(System.out::println);
     }

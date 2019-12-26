@@ -12,5 +12,6 @@
         </property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="ir.mctab.java32.hibernate.projects.hibernateandrepository.domain.Laptop" />
+        <mapping class="ir.mctab.java32.hibernate.projects.hibernateandrepository.domain.Student" />
     </session-factory>
 </hibernate-configuration>
