@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<hibernate-configuration xmlns="http://www.hibernate.org/xsd/hibernate-configuration">
+<hibernate-configuration >
     <session-factory>
         <property name="show_sql">true</property>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
@@ -11,5 +11,6 @@
             jdbc:mysql://localhost/HibernateAndRepository?createDatabaseIfNotExist=true
         </property>
         <property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping class="ir.mctab.java32.hibernate.projects.hibernateandrepository.domain.Laptop" />
     </session-factory>
 </hibernate-configuration>

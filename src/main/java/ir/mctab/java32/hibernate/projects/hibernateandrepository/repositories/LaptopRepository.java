@@ -9,6 +9,19 @@ import java.util.List;
 
 public class LaptopRepository {
 
+    private static LaptopRepository laptopRepository;
+
+    private LaptopRepository() {
+
+    }
+
+    public static LaptopRepository getInstance() {
+        if (laptopRepository == null) {
+            laptopRepository = new LaptopRepository();
+        }
+        return laptopRepository;
+    }
+
     private Session getSession() {
         return HibernateUtil.getSession();
     }
