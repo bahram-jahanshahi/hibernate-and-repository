@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
@@ -19,5 +21,9 @@ public class Laptop {
     private String title;
 
     private String hardwareConfig;
+
+    @ManyToMany()
+    private List<Student> students = new ArrayList<>();
+
 
 }
