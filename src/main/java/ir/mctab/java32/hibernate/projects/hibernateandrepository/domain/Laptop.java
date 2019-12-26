@@ -22,7 +22,11 @@ public class Laptop {
 
     private String hardwareConfig;
 
-    @ManyToMany()
+    // @ManyToMany(mappedBy = "laptops", cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinTable(name = "student_laptop",
+            joinColumns = { @JoinColumn(name = "lid") },
+            inverseJoinColumns = { @JoinColumn(name = "sid") })
     private List<Student> students = new ArrayList<>();
 
 

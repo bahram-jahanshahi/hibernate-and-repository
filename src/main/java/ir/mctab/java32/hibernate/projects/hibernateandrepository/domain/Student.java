@@ -24,7 +24,10 @@ public class Student {
 
     private String family;
 
-    @ManyToMany(mappedBy = "students")
+    @ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinTable(name = "student_laptop",
+            joinColumns = { @JoinColumn(name = "sid") },
+            inverseJoinColumns = { @JoinColumn(name = "lid") })
     @ToString.Exclude
     private List<Laptop> laptops = new ArrayList<>();
 }
